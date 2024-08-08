@@ -31,7 +31,6 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Home page")
 }
 func wsEndpoint(w http.ResponseWriter, r *http.Request) {
-	//fmt.Fprintf(w, "Hello world")
 	upgrader.CheckOrigin = func(r *http.Request) bool { return true }
 
 	ws, err := upgrader.Upgrade(w, r, nil)
@@ -56,7 +55,7 @@ func wsEndpoint(w http.ResponseWriter, r *http.Request) {
 		connection: ws,
 	})
 
-	fmt.Println("Ovo je id zapravo", string(p))
+	fmt.Println("ID OF USER THAT CONNECTED:", string(p))
 	reader(ws)
 }
 

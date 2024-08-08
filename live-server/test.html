@@ -16,7 +16,6 @@
         socket.onopen = () => {
             console.log("Successfully Connected");
             socket.send(crypto.randomUUID());
-            socket.send(crypto.randomUUID());
         };
         
         socket.onmessage = event => {

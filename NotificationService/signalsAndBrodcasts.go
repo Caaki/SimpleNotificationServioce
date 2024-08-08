@@ -40,19 +40,19 @@ func processMessages(wg *sync.WaitGroup) {
 func addMessageForRecipientsLoop(wg *sync.WaitGroup) {
 
 	for {
-		fmt.Print("Unesite broj primaoca: ")
+		fmt.Print("Enter number of recipients: ")
 		countOfRecipients := 0
 		fmt.Scan(&countOfRecipients)
 
 		recipients := make([]string, 0)
 
-		fmt.Print("Unesite poruku : ")
+		fmt.Print("Enter the message you want to send : ")
 		messageForUsers := ""
 		fmt.Scanln(&messageForUsers)
 
 		for range countOfRecipients {
 			name := ""
-			fmt.Print("Unesite ime primaoca: ")
+			fmt.Print("Enter name of recipient: ")
 			fmt.Scanln(&name)
 			recipients = append(recipients, name)
 		}
